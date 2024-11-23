@@ -33,7 +33,7 @@
     </script>
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="logo">
             <h1>Dr. Valandikar's</h1>
             <p class="tagline">Homeopathy</p>
@@ -43,13 +43,14 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#treatments">Treatments</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="treatments.html">Treatments</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -70,18 +71,12 @@
                     <div class="slide-content">
                         <h1>Experience the Power of Homeopathy</h1>
                         <p>Discover natural remedies for a healthier life</p>
-                        <div class="hero-cta-container">
-                            <a href="#appointment" class="cta-button">Schedule Consultation</a>
-                        </div>
                     </div>
                 </div>
                 <div class="slide" style="background-image: url('images/hero-bg3.jpg');">
                     <div class="slide-content">
                         <h1>Compassionate Care for All Ages</h1>
                         <p>From infants to seniors, we provide holistic care</p>
-                        <div class="hero-cta-container">
-                            <a href="#appointment" class="cta-button">Schedule Consultation</a>
-                        </div>
                     </div>
                 </div>
                 <!-- Add more slides as needed -->
@@ -89,36 +84,24 @@
                     <div class="slide-content">
                         <h1>Your Health, Our Priority</h1>
                         <p>Comprehensive homeopathic solutions for a healthier you</p>
-                        <div class="hero-cta-container">
-                            <a href="#appointment" class="cta-button">Schedule Consultation</a>
-                        </div>
                     </div>
                 </div>
                 <div class="slide" style="background-image: url('images/hero-bg5.jpg');">
                     <div class="slide-content">
                         <h1>Natural Healing for Modern Life</h1>
                         <p>Discover the benefits of homeopathy in your daily life</p>
-                        <div class="hero-cta-container">
-                            <a href="#appointment" class="cta-button">Schedule Consultation</a>
-                        </div>
                     </div>
                 </div>
                 <div class="slide" style="background-image: url('images/hero-bg6.jpg');">
                     <div class="slide-content">
                         <h1>Empowering Health Through Homeopathy</h1>
                         <p>Take control of your health with personalized homeopathic treatments</p>
-                        <div class="hero-cta-container">
-                            <a href="#appointment" class="cta-button">Schedule Consultation</a>
-                        </div>
                     </div>
                 </div>
                 <div class="slide" style="background-image: url('images/hero-bg7.jpg');">
                     <div class="slide-content">
                         <h1>Healing Naturally, Living Fully</h1>
                         <p>Experience the holistic approach to health and wellness</p>
-                        <div class="hero-cta-container">
-                            <a href="#appointment" class="cta-button">Schedule Consultation</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -131,6 +114,8 @@
                 <span class="dot" data-index="5"></span>
                 <span class="dot" data-index="6"></span>
             </div>
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
         </section>
 
         <section id="about" class="about-section">
@@ -154,6 +139,10 @@
                             <div class="credential-item">
                                 <i class="fas fa-medal"></i>
                                 <span>Member of Central Council of Homeopathy</span>
+                            </div>
+                            <div class="credential-item">
+                                <i class="fas fa-award"></i>
+                                <span>Awarded Best Homeopathic Doctor 2022</span>
                             </div>
                         </div>
                         <a href="#about" class="learn-more-btn">Learn More</a>
@@ -187,6 +176,9 @@
                         <p>Specialized treatments for hormonal and reproductive health issues.</p>
                     </div>
                 </div>
+                <div class="more-treatments">
+                    <a href="#treatments" class="more-treatments-btn">Click For More Treatments</a>
+                </div>
             </div>
         </section>
 
@@ -195,10 +187,12 @@
                 <h2>Patient Testimonials</h2>
                 <div class="testimonial-slider">
                     <div class="testimonial">
+                        <img src="images/testimonial1.jpg" alt="Priya S." class="testimonial-image">
                         <p>"Dr. Valandikar's treatment helped me overcome my chronic migraines. I'm grateful for his expertise."</p>
                         <cite>- Priya S., Mumbai</cite>
                     </div>
                     <div class="testimonial">
+                        <img src="images/testimonial2.jpg" alt="Rajesh P." class="testimonial-image">
                         <p>"I've seen remarkable improvement in my arthritis symptoms. Highly recommend this clinic!"</p>
                         <cite>- Rajesh P., Pune</cite>
                     </div>
@@ -253,6 +247,21 @@
             </div>
         </section>
 
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>What is homeopathy?</h3>
+                    <p>Homeopathy is a system of alternative medicine...</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does homeopathy work?</h3>
+                    <p>Homeopathy works on the principle of "like cures like"...</p>
+                </div>
+                <!-- Add more FAQ items -->
+            </div>
+        </section>
+
         <section id="contact" class="contact-section">
             <div class="container">
                 <div class="contact-info">
@@ -291,20 +300,27 @@
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#treatments">Treatments</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="treatments.html">Treatments</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-social">
-                <h4>Connect With Us</h4>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                </div>
+            <div class="footer-other-links">
+                <h4>Other Links</h4>
+                <ul>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Signup for Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="submit-btn">Subscribe</button>
+                </form>
             </div>
         </div>
         <div class="footer-bottom">

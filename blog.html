@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Blog - Dr. Chinmay's Homeopathy Clinic</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="funstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -24,7 +24,8 @@
                 <li><a href="treatments.html">Treatments</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html">Health Blog</a></li>
+                <li><a href="blog.html" class="active">Health Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -32,30 +33,64 @@
 
     <main>
         <section id="blog">
-            <h2>Health & Wellness Blog</h2>
-            <div class="blog-posts">
-                <article class="blog-post">
-                    <img src="images/blog-image1.jpg" alt="Blog Image 1" class="blog-image">
-                    <h3>The Benefits of Homeopathy in Chronic Disease Management</h3>
-                    <p>Learn how homeopathic treatments can help manage chronic conditions effectively...</p>
-                    <a href="#" class="read-more">Read More</a>
-                </article>
-                <article class="blog-post">
-                    <img src="images/blog-image2.jpg" alt="Blog Image 2" class="blog-image">
-                    <h3>Boosting Immunity Naturally: Homeopathic Approaches</h3>
-                    <p>Discover natural ways to strengthen your immune system with homeopathy...</p>
-                    <a href="#" class="read-more">Read More</a>
-                </article>
-                <!-- Add more blog posts -->
+            <div class="container">
+                <h2>Health & Wellness Blog</h2>
+                <div class="blog-posts">
+                    <article class="blog-post">
+                        <img src="images/blog-image1.jpg" alt="Blog Image 1" class="blog-image">
+                        <h3>The Benefits of Homeopathy in Chronic Disease Management</h3>
+                        <p>Learn how homeopathic treatments can help manage chronic conditions effectively...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                    <article class="blog-post">
+                        <img src="images/blog-image2.jpg" alt="Blog Image 2" class="blog-image">
+                        <h3>Boosting Immunity Naturally: Homeopathic Approaches</h3>
+                        <p>Discover natural ways to strengthen your immune system with homeopathy...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                    <!-- Add more blog posts -->
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Dr. Chinmay's Homeopathy Clinic. All rights reserved.</p>
-        <p>Disclaimer: This website is for informational purposes only and does not constitute medical advice.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="clinic-logo.png" alt="Clinic Logo" class="clinic-logo">
+                <p>Dr. Valandikar's Homeopathy Clinic</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="treatments.html">Treatments</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-other-links">
+                <h4>Other Links</h4>
+                <ul>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Signup for Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="submit-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Dr. Valandikar's Homeopathy Clinic. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="funscript.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Dr. Chinmay's Homeopathy Clinic</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="funstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -23,8 +23,9 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="treatments.html">Treatments</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
                 <li><a href="blog.html">Health Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -32,34 +33,68 @@
 
     <main>
         <section id="gallery">
-            <h2>Clinic Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/image2.jpg" alt="Clinic Exterior" class="gallery-image">
-                    <h3>Clinic Exterior</h3>
+            <div class="container">
+                <h2>Clinic Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/image2.jpg" alt="Clinic Exterior" class="gallery-image">
+                        <h3>Clinic Exterior</h3>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/image3.jpg" alt="Consultation Room" class="gallery-image">
+                        <h3>Consultation Room</h3>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/image4.jpg" alt="Medicine Dispensary" class="gallery-image">
+                        <h3>Medicine Dispensary</h3>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/image5.jpg" alt="Clinic Interior" class="gallery-image">
+                        <h3>Clinic Interior</h3>
+                    </div>
+                    <!-- Add more gallery items -->
                 </div>
-                <div class="gallery-item">
-                    <img src="images/image3.jpg" alt="Consultation Room" class="gallery-image">
-                    <h3>Consultation Room</h3>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image4.jpg" alt="Medicine Dispensary" class="gallery-image">
-                    <h3>Medicine Dispensary</h3>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image5.jpg" alt="Clinic Interior" class="gallery-image">
-                    <h3>Clinic Interior</h3>
-                </div>
-                <!-- Add more gallery items -->
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Dr. Chinmay's Homeopathy Clinic. All rights reserved.</p>
-        <p>Disclaimer: This website is for informational purposes only and does not constitute medical advice.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="clinic-logo.png" alt="Clinic Logo" class="clinic-logo">
+                <p>Dr. Valandikar's Homeopathy Clinic</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="treatments.html">Treatments</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-other-links">
+                <h4>Other Links</h4>
+                <ul>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Signup for Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="submit-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Dr. Valandikar's Homeopathy Clinic. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="funscript.js"></script>
 </body>
 </html>

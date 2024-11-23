@@ -45,6 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentSlide);
     }
 
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
     // Start the slideshow
     showSlide(currentSlide);
     setInterval(nextSlide, 5000); // Change slide every 5 seconds
@@ -56,6 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
             showSlide(currentSlide);
         });
     });
+
+    // Invisible buttons for navigation
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
 
     // Form Submission Handler
     const appointmentForm = document.querySelector('.appointment-form');
@@ -176,4 +188,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize components
     initializeTreatmentCards();
+
+    // Transparent Navigation Bar on Top
+    const header = document.getElementById('header');
+    const heroSection = document.querySelector('.hero');
+
+    function handleScroll() {
+        if (window.scrollY > heroSection.offsetHeight) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Manual Sliding for Hero Slideshow
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function handleTouchStart(e) {
+        touchStartX = e.touches[0].clientX;
+    }
+
+    function handleTouchMove(e) {
+        touchEndX = e.touches[0].clientX;
+    }
+
+    function handleTouchEnd() {
+        if (touchEndX < touchStartX) {
+            nextSlide();
+        } else if (touchEndX > touchStartX) {
+            prevSlide();
+        }
+    }
+
+    heroSection.addEventListener('touchstart', handleTouchStart);
+    heroSection.addEventListener('touchmove', handleTouchMove);
+    heroSection.addEventListener('touchend', handleTouchEnd);
 });

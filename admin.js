@@ -1,93 +1,74 @@
+// admin.js
 document.addEventListener('DOMContentLoaded', function() {
-    const writeBlogBtn = document.getElementById('write-blog');
-    const editContactBtn = document.getElementById('edit-contact');
-    const logoutBtn = document.getElementById('logout');
-    const blogForm = document.getElementById('blog-form');
-    const contactForm = document.getElementById('contact-form');
-    const newBlogPost = document.getElementById('new-blog-post');
-    const editContactInfo = document.getElementById('edit-contact-info');
-    const message = document.getElementById('message');
+    const websiteReplica = document.getElementById('website-replica');
+    const saveBtn = document.getElementById('save-btn');
+    const exitBtn = document.getElementById('exit-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+
+    let editableElements = [];
 
     // Check if user is logged in
-    firebase.auth().onAuthStateChanged(function(user) {
+    auth.onAuthStateChanged(user => {
         if (!user) {
-            // No user is signed in, redirect to login
             window.location.href = 'login.html';
-        }
-    });
-
-    writeBlogBtn.addEventListener('click', function() {
-        blogForm.style.display = 'block';
-        contactForm.style.display = 'none';
-    });
-
-    editContactBtn.addEventListener('click', function() {
-        contactForm.style.display = 'block';
-        blogForm.style.display = 'none';
-    });
-
-    logoutBtn.addEventListener('click', function() {
-        firebase.auth().signOut().then(() => {
-            window.location.href = 'login.html';
-        }).catch((error) => {
-            console.error('Error signing out: ', error);
-        });
-    });
-
-    newBlogPost.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const title = document.getElementById('blog-title').value;
-        const content = document.getElementById('blog-content').value;
-        const image = document.getElementById('blog-image').files[0];
-
-        if (image) {
-            const storageRef = firebase.storage().ref('blog-images/' + image.name);
-            storageRef.put(image).then(function(snapshot) {
-                snapshot.ref.getDownloadURL().then(function(downloadURL) {
-                    saveBlogPost(title, content, downloadURL);
-                });
-            });
         } else {
-            saveBlogPost(title, content);
+            loadWebsiteReplica();
         }
     });
 
-    function saveBlogPost(title, content, imageUrl = null) {
-        firebase.firestore().collection('blog-posts').add({
-            title: title,
-            content: content,
-            imageUrl: imageUrl,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        })
-        .then(() => {
-            message.textContent = 'Blog post published successfully!';
-            message.className = 'success';
-            newBlogPost.reset();
-        })
-        .catch((error) => {
-            message.textContent = 'Error publishing blog post: ' + error.message;
-            message.className = 'error';
-        });
+    // Logout functionality
+    logoutBtn.addEventListener('click', async () => {
+        try {
+            await auth.signOut();
+            window.location.href = 'login.html';
+        } catch (error) {
+            console.error(error);
+        }
+    });
+
+    // Load website replica
+    function loadWebsiteReplica() {
+        // Fetch and display the website replica
+        // This is a placeholder for the actual website content
+        websiteReplica.innerHTML = `
+            <h2 contenteditable="true">Welcome to Dr. Chinmay's Homeopathy Clinic</h2>
+            <p contenteditable="true">This is a paragraph that you can edit.</p>
+            <ul>
+                <li contenteditable="true">Editable list item 1</li>
+                <li contenteditable="true">Editable list item 2</li>
+            </ul>
+        `;
+
+        // Collect all editable elements
+        editableElements = Array.from(websiteReplica.querySelectorAll('[contenteditable="true"]'));
     }
 
-    editContactInfo.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const address = document.getElementById('clinic-address').value;
-        const phone = document.getElementById('clinic-phone').value;
-        const email = document.getElementById('clinic-email').value;
+    // Save functionality
+    saveBtn.addEventListener('click', async () => {
+        const content = {};
+        editableElements.forEach(element => {
+            content[element.tagName] = element.innerText;
+        });
 
-        firebase.firestore().collection('clinic-info').doc('contact').set({
-            address: address,
-            phone: phone,
-            email: email
-        })
-        .then(() => {
-            message.textContent = 'Contact information updated successfully!';
-            message.className = 'success';
-        })
-        .catch((error) => {
-            message.textContent = 'Error updating contact information: ' + error.message;
-            message.className = 'error';
+        try {
+            await firestore.collection('websiteContent').doc('current').set(content);
+            alert('Content saved successfully!');
+        } catch (error) {
+            console.error(error);
+            alert('Failed to save content.');
+        }
+    });
+
+    // Exit functionality
+    exitBtn.addEventListener('click', () => {
+        window.location.href = 'admin.html';
+    });
+
+    // Clear functionality
+    clearBtn.addEventListener('click', () => {
+        editableElements.forEach(element => {
+            element.innerText = '';
         });
     });
 });
